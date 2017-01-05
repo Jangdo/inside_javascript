@@ -5,7 +5,7 @@
 따라서, 변수에 어떤 형태의 데이터를 저장하느냐에 따라 해당 변수의 타입이 결정된다.
 
 <pre>
-예제<br>
+예제
 var intNum = 10;
 console.log(typeof intNum);
 </pre>
