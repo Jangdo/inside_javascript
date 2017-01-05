@@ -16,3 +16,9 @@ var nullVar = null;
 console.log(typeof nullVar === null);
 console.log(nullVar === null);
 </pre>
+null 의 타입은 object 이다.
+undefined 는 타입이자 값을 나타낸다.
+
+##3.2 자바스크립트 참조타입(객체타입)
+기본타입을 제외한 모든 값은 객체<br>
+연산 역시 참조에 의한 연산
