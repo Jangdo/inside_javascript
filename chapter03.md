@@ -6,6 +6,7 @@
 
 <pre>
 예제
+
 var intNum = 10;
 console.log(typeof intNum);
 </pre>
