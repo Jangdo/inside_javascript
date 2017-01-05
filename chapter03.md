@@ -39,7 +39,7 @@ console.log(objA, objB);
 </pre>
 
 ##3.5 참조에 의한 함수 호출 방식
-기본타입의 호출 방식 : 값에 의한 호출(call by value)
+기본타입의 호출 방식 : 값에 의한 호출(call by value)<br>
 참조타입의 호출 방식 : 참조에 의한 호출(call by reference)
 <pre>
 var a= 100;
@@ -54,3 +54,5 @@ var a= 100;
   console.log(a);
   console.log(objA);
 </pre>
+### call by value
+기본타입의 경우 함수를 호출할 때 인자로 기본 타입의 값을 넘길 경우, 호출된 함수의 매개변수로 <strong>복사된 값</strong>이 전달된다.<br>
