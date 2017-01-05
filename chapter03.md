@@ -26,3 +26,31 @@ undefined 는 타입이자 값을 나타낸다.
 Object 생성방법, 객체 리터널 생성방법, 생성자 함수 생성방법 <br>
 생성된 객체의 프로퍼티 접근 - . 연산자 및 ['property name'] 으로 접근 <br>
 객체 프로퍼티는 읽기/쓰기/갱신이 가능
+##3.4 객체연산
+객체의 모든연산은 실제 값이 아닌 참조값으로 처리된다.
+<pre>
+var objA = {
+  var : 40
+}
+var objB = objA;
+console.log(objA, objB);
+objB.val = 50;
+console.log(objA, objB);
+</pre>
+
+##3.5 참조에 의한 함수 호출 방식
+기본타입의 호출 방식 : 값에 의한 호출(call by value)
+참조타입의 호출 방식 : 참조에 의한 호출(call by reference)
+<pre>
+var a= 100;
+  var objA = {value:100};
+  function bbb(num, obj){
+    num = 200;
+    obj.value = 200;
+    console.log(num);
+    console.log(obj);
+  };
+  bbb(a, objA);
+  console.log(a);
+  console.log(objA);
+</pre>
