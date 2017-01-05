@@ -55,4 +55,4 @@ var a= 100;
   console.log(objA);
 </pre>
 ### call by value
-기본타입의 경우 함수를 호출할 때 인자로 기본 타입의 값을 넘길 경우, 호출된 함수의 매개변수로 <strong style="color:#ff0000">복사된 값</strong>이 전달된다.<br>
+기본타입의 경우 함수를 호출할 때 인자로 기본 타입의 값을 넘길 경우, 호출된 함수의 매개변수로 <strong>복사된 값</strong>이 전달된다.<br>
