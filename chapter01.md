@@ -7,15 +7,6 @@
 <pre>
 함수는 일급객체이다.
 </pre>
-###JavaScript에서 함수가 1급 객체인 것이 중요한 이유
-
-함수가 1급 객체라는 사실은 겉으로 봤을 땐 그리 특별하지 않다. 함수를 그냥 주고받을 수 있다는 것 뿐이지만 이것이 아주 큰 차이점을 만든다.<br><br>
-
-가장 중요한 장점은 바로 고차 함수(high order function)가 가능하다는 점이다. JavaScript의 each, filter, map, sort 등의 함수들이 얼마나 편리한지는 잘 알고 있을 것이다. 인자로 목적에 맞는 함수를 하나 넘겨주면 아주 쉽게 처리가 된다. 반면, Java 7의 Collections.sort함수같은 경우도 비교를 위해 인자를 하나 넘겨주게 되는데, 이것은 함수가 아니라 Comparator interface 타입의 인스턴스(instance)이다. 함수 하나를 넘겨주기 위해서 새로운 클래스를 만들고 그것의 인스턴스까지 생성해야 하는 것이다 – ES6와 Java 8에서는 람다(lambda)가 지원되면서 훨신 간편해졌다.<br><br>
-
-1급 객체가 JavaScript의 클로져(closure)와 만나면 또 하나의 장점이 생긴다. JavaScript의 함수는 생성될 당시의 Lexical Environment를 기억하게 되는데, 함수를 주고받게 되면 이 Lexical Environment도 함께 전달된다. 이것을 이용해서 커링(currying)과 메모이제이션(memoization)이 가능해진다. 여기서 적기엔 너무 큰 주제이므로 기회가 될 때 따로 다뤄보도록 하겠다.
-
-
 ## 프로토타입
 <pre>
 모든 객체는 숨겨진 링크인 프로토타입을 가진다.
