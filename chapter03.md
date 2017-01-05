@@ -10,3 +10,9 @@
 var intNum = 10;
 console.log(typeof intNum);
 </pre>
+###null 과 undefined
+<pre>
+var nullVar = null;
+console.log(typeof nullVar === null);
+console.log(nullVar === null);
+</pre>
