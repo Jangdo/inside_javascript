@@ -125,3 +125,67 @@ console.log(foo);   // (출력값 {name: "foo", age: 29, gender: "male"})
 [4장에서 자세히](./chpater04.md)
 
 ### 3.2.2 객체 프로퍼티 읽기/쓰기/갱신
+객체는 새로운 값을 가진 프로퍼티를 생성하고, 생성된 프로퍼티에 접근해서 해당 값을 읽거나 또는 원하는 값으로 프로퍼티의 값을 갱신할 수 있다.  
+
+>객체의 프로퍼티 접근 방법
+- 대괄호([]) 표기법
+- 마침표(.) 표기법
+
+```js
+//객체 리터럴 방식으로 foo 객체 생성
+var foo = {
+    name : 'foo',
+    age : 29,
+    gender : 'male'
+};
+
+//객체 프로퍼티 읽기
+console.log(foo.name);  // (출력값 foo)
+console.log(foo['name']);   // (출력값 foo)
+
+//객체 프로퍼티 갱신
+foo.name = 'foo2';
+console.log(foo.name);  // (출력값 foo2)
+console.log(foo['name']);  // (출력값 foo2)
+
+//객체 프로퍼티 동적 생성
+foo.major = 'front-end'
+console.log(foo.major);  // (출력값 front-end)
+
+//대괄호 표기법만을 사용해야 할 경우
+foo['full-name'] = 'foo bar';
+console.log(foo['full-name']);  // (출력값 foo bar)
+console.log(foo.full-name);    // (출력값 NaN)
+```
+대괄호 표기법에서는 접근하려는 프로퍼티 이름을 **문자열 형태**로 만들어야 한다.  
+
+**대괄호 표기법만을 사용해야 하는 경우**  
+일반적으로 자바스크립트 또한 다른 언어와 비슷하게 마침표 표기법을 이용해서 객체의 프로퍼티에 접근하는 방법을 주고 사용한다.  
+하지만 객체 프로퍼티에 접근할 때 대괄호 표기법만을 사용해야 하는 경우가 있다.  
+접근하려는 프로퍼티가 `표현식`이거나 `예약어`일 경우다.  
+`-`연산자가 있는 표현식 등이 있다.
+
+###### NaN ( Not a Number) 값
+자바스크립트에서 NaN은 수치 연산을 해서 정상적인 값을 얻지 못할 때 출력되는 값이다.
+
+### 3.2.3 for in 문과 객체 프로퍼티 출력
+for in 문을 사용하면, 객체에 포함된 모든 프로퍼티에 대해 `루프`를 수행할 수 있다.
+
+```js
+//객체 리터럴을 통한 foo 객체 생성
+var foo = {
+    name : 'foo',
+    age : 29,
+    gender : 'male'
+};
+
+//for in 문을 이용한 객체 프로퍼티 출력
+var prop;
+for (prop in foo) {
+    console.log(prop, foo[prop]);
+}
+//출력값
+name foo
+age 29
+gender male
+```
