@@ -99,7 +99,7 @@ var emptyObj = {};
 console.dir(emptyArray.__proto__);
 console.dir(emptyObj.__proto__);
 ```
-![배열과 객체 이미지](./images/img_array.gif)
+![배열과 객체 이미지](../images/img_array.gif)
 
 ### 3.5.5 배열의 프로퍼티 동적 생성
 배열도 자바스크립트 객체이므로, 인덱스가 숫자인 배열 원소 이외에도 객체처럼 동적으로 프로퍼티를 추가할 수있다.
