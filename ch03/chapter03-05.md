@@ -123,7 +123,7 @@ console.dir(arr);
 위 예제에서는 arr 배열에 동적으로 color와 name 프로퍼티를 추가햇다.  
 하지만, 배열에 동적 프로퍼티가 추가될 경우는 배열의 length 값이 3으로 바뀌지 않는다는 것이다.  
 즉, 배열의 length 프로퍼티는 배열 원소의 가장 큰 인덱스가 변했을 경우만 변경된다.
-![배열의 프로퍼티 동적생성 이미지](./images/img_array02.gif)
+![배열의 프로퍼티 동적생성 이미지](../images/img_array02.gif)
 
 ### 3.5.6 배열의 프로퍼티 열거
 객체는 for in 문으로 프로퍼티를 열거한다.  
@@ -138,7 +138,7 @@ for ( var i = 0 ; i < arr.length ; i++ ) {
     console.log(i, arr[i]);
 }
 ```
-![배열의 프로퍼티 열거 이미지](./images/img_array03.gif)
+![배열의 프로퍼티 열거 이미지](../images/img_array03.gif)
 
 ### 3.5.7 배열 요소 삭제
 배열도 객체이므로, 배열 요소나 프로퍼티를 삭제하는데 `delete`연산자를 사용할 수 있다.

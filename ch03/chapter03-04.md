@@ -14,7 +14,7 @@ console.log(foo.toString());
 console.dir(foo);
 ```
 
-![프로토타입 예시 이미지](./images/img_prototype.gif)
+![프로토타입 예시 이미지](../images/img_prototype.gif)
 
 toString() 메서드가 없으므로 에러가 발생해야 하지만, 정상적으로 결과가 출력된 것을 확인할 수 있다.  
 그 이유는 **foo 객체의 프로토타입** 에 toString() 메서드가 이미 정의되어 있고, foo 객체가 상속처럼 toString() 메서드를 호출했기 때문이다.  
@@ -126,7 +126,7 @@ var emptyObj = {};
 console.dir(emptyArray.__proto__);
 console.dir(emptyObj.__proto__);
 ```
-![배열과 객체 이미지](./images/img_array.gif)
+![배열과 객체 이미지](../images/img_array.gif)
 
 ### 3.5.5 배열의 프로퍼티 동적 생성
 배열도 자바스크립트 객체이므로, 인덱스가 숫자인 배열 원소 이외에도 객체처럼 동적으로 프로퍼티를 추가할 수있다.
@@ -150,7 +150,7 @@ console.dir(arr);
 위 예제에서는 arr 배열에 동적으로 color와 name 프로퍼티를 추가햇다.  
 하지만, 배열에 동적 프로퍼티가 추가될 경우는 배열의 length 값이 3으로 바뀌지 않는다는 것이다.  
 즉, 배열의 length 프로퍼티는 배열 원소의 가장 큰 인덱스가 변했을 경우만 변경된다.
-![배열의 프로퍼티 동적생성 이미지](./images/img_array02.gif)
+![배열의 프로퍼티 동적생성 이미지](../images/img_array02.gif)
 
 ### 3.5.6 배열의 프로퍼티 열거
 객체는 for in 문으로 프로퍼티를 열거한다.  
@@ -165,7 +165,7 @@ for ( var i = 0 ; i < arr.length ; i++ ) {
     console.log(i, arr[i]);
 }
 ```
-![배열의 프로퍼티 열거 이미지](./images/img_array03.gif)
+![배열의 프로퍼티 열거 이미지](../images/img_array03.gif)
 
 ### 3.5.7 배열 요소 삭제
 배열도 객체이므로, 배열 요소나 프로퍼티를 삭제하는데 `delete`연산자를 사용할 수 있다.
