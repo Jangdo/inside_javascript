@@ -71,6 +71,36 @@ foo(function(){
 foo() 함수를 호출할 때, 함수 리터널 방식으로 생성한 **익명함수** 를 func 인자로 넘겼다.  
 따라서 foo() 함수 내부에서는 func 매개변수로 인자에 넘겨진 함수를 호출할 수 있다.  
 
+#### 4.2.2.2 함수 인자로 전달
+
+함수는 다른 함수의 인자로도 전달이 가능하다.  
+
+```js
+// 함수 표현식으로 foo() 함수 생성
+var foo = function(func){
+    func(); // 인자로 받은 func() 함수 호출
+};
+foo(function(){
+    console.log('Function can be used as the argument');
+});
+```
+
+#### 4.2.2.3 리턴값으로 활용
+
+함수는 다른 함수의 리턴값으로도 활용할 수 있다.  
+이것이 가능한 이유 또한 함수 자체가 값으로 취급되기 때문이다.
+
+```js
+// 함수를 리턴하는 foo() 함수 정의
+var foo = function(){
+    return function(){
+        console.log('this function is the return value');
+    };
+};
+
+var bar = foo();
+bar();
+```
 
 
 ## [4.3 함수의 다양한 형태](./chapter04-03.md)
