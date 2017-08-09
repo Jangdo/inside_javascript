@@ -140,7 +140,38 @@ ECMA5 스크립트 명세서에는 모든 함수가 **length** 와 **prototype �
 
  ECMA 표준에서는 add()와 같이 함수 객체의 부모 역할을 하는 프로토타입 객체를 **Function.prototype 객체** 라고 명명하고 있으며, 이것 역시 **함수 객체** 라고 정의 하고 있다.
 
- 
+#### 4.2.3.1 lenth 프로퍼티
+
+함수 객체의 **length 프로퍼티** 는 앞서 설명했듯이 ECMAScript에서 정한 모든 함수가 가져야 하는 표준 프로퍼티로서, 함수가 정상적으로 실행될 때 기대되는 인자의 개수를 나타낸다.
+
+```js
+// 함수 객체의 length 프로퍼티
+function func0(){
+
+}
+
+function func1(x){
+    return x;
+}
+
+function func2(x, y){
+    return x + y;
+}
+
+function func3(x, y, z){
+    return x + y + z;
+}
+
+console.log('func0.length - ' + func0.length);  // (출력값 func0.length - 0)
+console.log('func1.length - ' + func1.length);  // (출력값 func0.length - 1)
+console.log('func2.length - ' + func2.length);  // (출력값 func0.length - 2)
+console.log('func3.length - ' + func3.length);  // (출력값 func0.length - 3)
+```
+
+![length 프로퍼티](../images/4.4.gif)  
+
+위 예제 코드는 인자 개수가 서로 다른 함수들로 구성되어 있다.  
+출력값을 살펴보면 함수 객체의 length 프로퍼티는 함수를 작성할 때 `정의한 인자 개수`를 나타내고 있음을 확인할 수 있다.
 
 
 ## [4.3 함수의 다양한 형태](./chapter04-03.md)
