@@ -7,7 +7,37 @@
 
 이러한 익명 함수의 대표적인 용도가 바로 **콜백 함수** 이다.  
 
+콜백 함수는 코드를 통해 명시적으로 호출하는 함수가 아니라, 개발자는 단지 함수를 등록하기만 하고, 어떤 이벤트가 발생했거나 특정 시점에 도달했을 때 시스템에서 호출되는 함수를 말한다.
 
-123123
+또한, 특정 함수의 인자로 넘겨서, 코드 내부에서 호출되는 함수 또한 콜백 함수가 될 수 있다.
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        // 페이지 로드시 호출될 콜백 함수
+        window.onload = function(){
+            alert('This id the callback function');
+        };
+    </script>
+</body>
+</html>
+```
+위 예제는 widnow.onload 이벤트 핸들러를 `익명 함수`로 연결했다. 따라서 익명 함수가 콜백 함수로 등록된 것이다.
+
+### 4.3.2 즉시 실행 함수
+
+함수를 정의함과 동시에 바로 실행하는 함수를 **즉시 실행 함수(immediate functions)** 라고 한다.   
+이 함수도 익명 함수를 응용한 형태이다.
+```js
+// 즉시 실행 함수 예제 코드
+(function(name){
+    console.log('This is the immediate function -> ' + name);
+})('foo');  // 출력값 This is the immediate function -> foo
+```
+이렇게 함수가 선언되자마자 실행되게 만든 즉시 실행 함수의 경우, **같은 함수를 다시 호출할 수 없다.**  
+따라서 즉시 실행 함수의 이러한 특징을 이용한다면 **최초 한 번의 실행만을 필요로 하는 초기화 코드 부분** 등에 사용할 수 있다.
 ## [4.4 함수 호출과 this](./chapter04-04.md)
