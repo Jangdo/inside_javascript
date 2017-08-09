@@ -186,4 +186,15 @@ prototype 프로퍼티는 함수가 생성될 때 만들어지며, 단지 **cons
 그리고 prototype 프로퍼티가 가리키는 프로토타입 객체의 유일한 consturctor 프로퍼티는 자신과 연결된 함수를 가리킨다.  
 즉, 자바스크립트에서는 함수를 생성할 때, 함수 자신과 연결된 프로토타입 객체를 동시에 생성하며, 이 둘은 각각 prototype과 consturctor라는 프로퍼티로 서로를 참조하게 된다.
 
+```js
+// MyFunction() 함수 정의
+function myFunction(){
+    return true;
+}
+
+console.dir(myFunction.prototype);
+```
+
+![prototype 프로퍼티](../images/4.5.gif)  
+
 ## [4.3 함수의 다양한 형태](./chapter04-03.md)
