@@ -193,6 +193,7 @@ function myFunction(){
 }
 
 console.dir(myFunction.prototype);
+console.dir(myFunction.prototype.consturctor);
 ```
 
 ![prototype 프로퍼티](../images/4.5.gif)  
