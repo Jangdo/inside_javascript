@@ -66,6 +66,30 @@ console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9));  //출력값 45
 ```
 
 ### 4.4.2 호출 패턴과 this 바인딩
+#### 4.4.2.1 객체의 메서드 호출할 때 this 바인딩
+객체의 프로퍼티가 함수일 경우, 이 함수를 메서드라고 부른다.  
+이러한 메서드를 호출할 때, 메서드 내부 코드에서 사용된 this는 **해당 메서드를 호출한 객체로 바인딩** 된다.
+```js
+//메서드 호출 사용 시 this 바인딩
+//myObject 객체 생성
+var myObject = {
+    name : 'foo',
+    sayName : function(){
+        console.log(this.name);
+    }
+};
+
+//otherObject 객체 생성
+var otherObject = {
+    name : 'bar'
+};
+
+otherObject.sayName = myObject.sayName;
+
+myObject.sayName();        //출력값 foo
+otherObject.sayName();     //출력값 bar
+```
+#### 4.4.2.2 함수를 호출할 때 this 바인딩
 자바스크립트에서는 함수를 호출하면, 해당 함수 내부 코드에서 사용된 **this는 전역 객체에 바인딩** 된다.  
 브라우저에서 자바스크립트를 실행하는 경우 전역 객체는 **window 객체** 가 된다.  
 
@@ -134,6 +158,7 @@ var value = 100;
 var myObject = {
     value : 1,
     func1 : function(){
+        //this를 that 변수에 저장
         var that = this;
         this.value += 1;
         console.log(this.value);
@@ -157,3 +182,5 @@ myObject.func1();
 4
 */
 ```
+자바스크립트에서는 이와 같은 this 바인딩의 한계를 극복하려고, this 바인딩을 명시적으로 할 수 있도록 call과 apply 메서드를 제공한다.  
+게다가, jQuery, underscore.js 등과 같은 자바스크립트 라이브러리들의 경우 bind라는 이름의 메서드를 통해, 사용자가 원하는 객체를 this에 바인딩할 수 있게 기능을 제공하고 있다.
