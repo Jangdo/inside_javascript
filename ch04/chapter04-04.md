@@ -119,3 +119,41 @@ myObject.func1();
 102
 */
 ```
+이렇게 실행결과가 예측했던 것과 다르게 출력된 이유는 자바스크립트에서는 **내부 함수 호출 패턴을 정의해 놓지 않기 때문이다.**  
+내부 함수도 결국 함수이므로 이를 호출할 때는 함수 호출로 취급된다. 따라서 함수 호출 패턴 규칙에 따라 내부 함수의 this는 전역 객체 (window)에 바인딩된다.  
+
+이렇게 내부 함수가 this를 참조하는 자바스크립트의 한계를 극복하려면 **부모 함수의 this** 를 내부 함수가 접근 가능한 **다른 변수에 저장** 하는 방법이 사용된다.  
+보통 관례상 this 값을 저장하는 변수의 이름을 that이라고 짓는다.  
+이렇게 되면 내부 함수에서는 that 변수로 부모 함수의 this가 가리키는 객체에 접근할 수 있다.
+```js
+//내부 함수의 this 바인딩 문제를 해결한 예제 코드
+//내부 함수 this 바인딩
+var value = 100;
+
+//myObject 객체 생성
+var myObject = {
+    value : 1,
+    func1 : function(){
+        var that = this;
+        this.value += 1;
+        console.log(this.value);
+        func2 = function(){
+            that.value += 1;
+            console.log(that.value);
+            func3 = function(){
+                that.value += 1;
+                console.log(that.value);
+            }
+            func3();
+        }
+        func2();
+    }
+};
+myObject.func1();
+/*
+출력값
+2
+3
+4
+*/
+```
